@@ -17,6 +17,15 @@ public class SubjectResponseDTO {
     @JsonProperty("description")
     private String description;
 
+    public SubjectResponseDTO() {
+    }
+
+    public SubjectResponseDTO(String name, Integer credits, String description) {
+        this.name = name;
+        this.credits = credits;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }

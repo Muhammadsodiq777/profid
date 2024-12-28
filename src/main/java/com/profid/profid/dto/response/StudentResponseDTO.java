@@ -29,6 +29,19 @@ public class StudentResponseDTO {
     @JsonProperty("subjects")
     private List<SubjectResponseDTO> subjects;
 
+    public StudentResponseDTO() {
+    }
+
+    public StudentResponseDTO(String name, String email, Integer age, String gender, String phoneNumber, String address, List<SubjectResponseDTO> subjects) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.subjects = subjects;
+    }
+
     public String getName() {
         return name;
     }

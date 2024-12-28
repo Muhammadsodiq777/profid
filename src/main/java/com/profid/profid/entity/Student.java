@@ -1,8 +1,6 @@
 package com.profid.profid.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.List;
 
@@ -34,6 +32,30 @@ public class Student {
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Subject> subjects;
+
+    public Student() {
+    }
+
+    public Student(Long id, String name, String email, Integer age, String gender, String phoneNumber, String address, List<Subject> subjects) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.subjects = subjects;
+    }
+
+    public Student(String name, String mail, int age, String gender, String number, String address, List<Subject> subjects) {
+        this.name = name;
+        this.email = mail;
+        this.age = age;
+        this.gender = gender;
+        this.phoneNumber = number;
+        this.address = address;
+        this.subjects = subjects;
+    }
 
     public Long getId() {
         return id;
