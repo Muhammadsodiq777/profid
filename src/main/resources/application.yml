@@ -1,0 +1,29 @@
+server:
+  max-http-header-size: 20MB
+  servlet:
+    context-path: /profid
+  port: 8080
+
+spring:
+  profiles:
+    active: local
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console  # H2 Console path for debugging
+
+httpclient:
+  connectionTimeout: 30000    # 30 seconds
+  requestTimeout: 120000      # 120 seconds
+  socketTimeout: 120000       # 120 seconds
+  maxTotalConnections: 100
+  maxRouteConnections: 10
+  defaultKeepAliveTime: 120   # 120 seconds
+  idleConnectionWaitTime: 120 # 120 seconds
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
